@@ -4,6 +4,8 @@ import Company from '../company';
 import { Information } from '../information';
 import Partners from '../partners';
 import Services from '../services';
+import Project from '../project';
+import News from '../news';
 
 const Home = () => {
   const [t] = useTranslation();
@@ -40,14 +42,11 @@ const Home = () => {
       <section id="services" className="bg-[#3d5a6a]">
         <Services />
       </section>
-
-      <section>
-        <Company />
-      </section>
-
+      <Company />
       <Partners />
-
       <Information />
+      <Project />
+      <News />
     </div>
   );
 };
