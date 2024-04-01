@@ -1,7 +1,7 @@
 export const Router = [
   {
     name: 'navlink1',
-    href: 'informaion',
+    href: 'information',
   },
   {
     name: 'navlink2',
@@ -21,6 +21,6 @@ export const Router = [
   },
   {
     name: 'navlink6',
-    href: 'communication',
+    href: 'connect',
   },
 ];

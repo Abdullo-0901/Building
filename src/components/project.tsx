@@ -1,5 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import '../App.css';
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const data = [
   {
@@ -42,14 +45,18 @@ const data = [
 
 const Project = () => {
   const [t] = useTranslation();
-
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <section className="containers my-10">
-      <p className="my-4 text-3xl">{t('loihatitle')}</p>
+    <section className="containers my-10" id="projects">
+      <p data-aos="zoom-in-up" className="my-4 text-3xl">
+        {t('loihatitle')}
+      </p>
       <main className="grid gap-10 md:grid-cols-2 ">
         {data.map((card) => {
           return (
-            <article key={card.id} className="relative ">
+            <article data-aos="zoom-in-down" key={card.id} className="relative ">
               <div
                 style={{
                   backgroundImage: `url(${card.img})`,

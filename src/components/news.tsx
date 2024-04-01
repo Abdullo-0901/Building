@@ -48,16 +48,16 @@ const News = () => {
                 data-aos="flip-left"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="1000"
-                className="aos-init aos-animate flex gap-6 rounded-2xl bg-white shadow-md max-sm:flex-col max-sm:gap-0"
+                className="aos-init aos-animate flex gap-6 rounded-2xl bg-white shadow-md max-sm:gap-0 sm:flex-col mmd:flex-row"
               >
-                <div className="w-1/2 max-sm:w-full">
+                <div className="sm:w-full mmd:w-1/2">
                   <img
                     src={news.img}
                     alt="img"
-                    className="h-full w-full rounded-l-2xl max-sm:rounded-t-2xl  max-sm:rounded-bl-none"
+                    className="h-full w-full rounded-l-2xl  sm:rounded-t-2xl sm:rounded-bl-none mmd:rounded-bl-2xl  mmd:rounded-tr-none"
                   />
                 </div>
-                <div className="w-1/2 py-4 max-sm:w-full max-sm:px-4">
+                <div className="py-4 sm:w-full sm:px-4 mmd:w-1/2 mmd:px-0">
                   <button className="ring-offset-background focus-visible:ring-ring text-primary-foreground scale inline-flex h-8 cursor-pointer items-center justify-center whitespace-nowrap rounded-md rounded-l-full rounded-r-full border-2 bg-red-300 px-10 py-2 text-sm font-medium transition-colors hover:border-gray-500 hover:bg-white hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                     Yangiliklar
                   </button>

@@ -5,5 +5,5 @@ import en from './en.json';
 export default {
   ru: { translation: ru },
   uz: { translation: uz },
-  eng: { translation: en },
+  en: { translation: en },
 };

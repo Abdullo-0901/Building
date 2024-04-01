@@ -1,8 +1,14 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../App.css';
-
 const Services = () => {
   const [t] = useTranslation();
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="containers pb-10 max-sm:px-4 sm:px-5 md:px-20" id="enterprises">
       <h2 data-aos="fade-up" className="aos-init aos-animate py-10 text-center text-[32px] text-white">

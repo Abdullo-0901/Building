@@ -8,8 +8,14 @@ import Project from '../project';
 import News from '../news';
 import Contact from '../contact';
 import Footer from '../footer';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const [t] = useTranslation();
   return (
     <div>
@@ -30,7 +36,7 @@ const Home = () => {
             <p className="animate__animated animate__bounceInLeft block pb-8 text-[18px] text-white max-sm:text-center sm:text-center sm2:text-start">
               {t('homedesc')}
             </p>
-            <div className="animate__animated animate__bounceInUp animate__delay-0.9s   gap-4 max-sm:justify-center">
+            <div className="animate__animated animate__bounceInUp animate__delay-0.9s   gap-4 sm:justify-center md:justify-start">
               <a href="#services">
                 <button className="ring-offset-background focus-visible:ring-ring text-primary-foreground scale inline-flex h-10 cursor-pointer items-center justify-center whitespace-nowrap rounded-md rounded-l-full rounded-r-full border-2 bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:border-gray-500 hover:bg-white hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                   Наши проекты
@@ -50,12 +56,12 @@ const Home = () => {
         <Services />
       </section>
       <Company />
-      {/* <Partners /> */}
-      {/* <Information /> */}
-      {/* <Project /> */}
-      {/* <News /> */}
-      {/* <Contact /> */}
-      {/* <Footer /> */}
+      <Partners />
+      <Information />
+      <Project />
+      <News />
+      <Contact />
+      <Footer />
     </div>
   );
 };

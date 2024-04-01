@@ -1,11 +1,17 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../App.css';
 
 const Company = () => {
   const [t] = useTranslation();
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div
-      id="progress"
+      id="company"
       className=" relative -z-10 -mt-3 bg-[url('/rate-image.jpg')] bg-cover bg-no-repeat object-cover"
     >
       <div className="containers pb-24 pt-10 text-white  max-sm:px-10 sm:justify-center sm:px-2 md:justify-start md:px-20">

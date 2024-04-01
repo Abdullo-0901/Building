@@ -4,6 +4,9 @@ import '../App.css';
 import { IconArrowRight, IconArrowLeft } from '@tabler/icons-react';
 import { rem } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const data = [
   {
@@ -43,8 +46,12 @@ const data = [
 const Partners = () => {
   const [t] = useTranslation();
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <section className="bg-[#3d5a6a] py-10">
+    <section className="bg-[#3d5a6a] py-10" id="partners">
       <div className="containers max-h-screen ">
         <h2
           data-aos="zoom-in"
@@ -53,6 +60,7 @@ const Partners = () => {
           {t('partnerstitle')}
         </h2>
         <Carousel
+          data-aos="zoom-out-left"
           withIndicators
           style={{ maxHeight: '70vh' }}
           slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}

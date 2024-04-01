@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next';
 import '../../App.css';
 import logo from '../../assets/logo.png';
 import { Router } from '../router';
+import Language from '../language/language';
 
 const Headers = () => {
   const [t] = useTranslation();
   return (
-    <header className="animate__animated animate__bounce fixed z-40 w-full backdrop-blur-[100px]">
+    <header className="animate__animated animate__bounce fixed z-40 w-full backdrop-blur-[100px] sm:py-2 md:py-0">
       <nav className="containers">
-        <ul className=" lex flex items-center justify-around ">
+        <ul className="  flex items-center sm:justify-between  md:justify-around ">
           {Router.slice(0, 3).map((rou) => {
             return (
               <div
@@ -23,7 +24,7 @@ const Headers = () => {
               </div>
             );
           })}
-          <img className="w-[100px]" src={logo} alt="qwdqwed" />
+          <img className="h-[80px] sm:w-[55px] md:w-[80px]" src={logo} alt="logo" />
           {Router.slice(3).map((rou) => {
             return (
               <div
@@ -37,14 +38,8 @@ const Headers = () => {
               </div>
             );
           })}
-          <select
-            id="small"
-            className=" inline-block rounded-lg border border-gray-300 bg-gray-50 p-2 text-sm text-gray-900  outline-none"
-          >
-            <option selected>Uz</option>
-            <option value="US">Ru</option>
-            <option value="CA">En</option>
-          </select>
+
+          <Language />
         </ul>
       </nav>
     </header>

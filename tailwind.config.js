@@ -11,6 +11,7 @@ export default {
       sm2: '400px',
       // => @media (min-width: 640px) { ... }
 
+      mmd: '550px',
       md: '768px',
 
       md2: '820px',

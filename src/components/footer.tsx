@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import '../App.css';
-import logo from '../assets/logo.png';
 import { Router } from './router';
 const Footer = () => {
   const [t] = useTranslation();
@@ -8,9 +7,9 @@ const Footer = () => {
   return (
     <div>
       <div className="bg-[#9b94fb]">
-        <div className="containers flex flex-wrap justify-around gap-6 py-10 pt-12 max-[600px]:justify-start ">
+        <div className="containers flex flex-wrap justify-around gap-6 py-10 pt-12 max-[600px]:justify-start sm:px-4 md:px-0 ">
           <div data-aos="fade-right" className="aos-init aos-animate">
-            <img src={logo} alt="logo" className="h-[100px] w-[100px]" />
+            <img src="/logo.png" alt="logo" className="h-[100px] w-[100px]" />
             <p className="py-4">Ijtimoiy tarmoqlarimizga obuna bo'ling</p>
             <div className="flex gap-2">
               <a href="https://www.instagram.com/ataev_bahodir_build/" target="_blank">
@@ -50,40 +49,43 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div data-aos="fade-right" className="aos-init aos-animate mt-4">
-            <ul className=" flex flex-col items-start">
-              {Router.slice(0, 3).map((rou) => {
-                return (
-                  <div key={rou.name} className="header flex h-[30px] cursor-pointer flex-col items-center">
-                    <a className="text-[#202733] " href={`#${rou.href}`}>
-                      {t(rou.name)}
-                    </a>
-                    <div className="linefot w-0"></div>
-                  </div>
-                );
-              })}
-              {Router.slice(3).map((rou) => {
-                return (
-                  <div key={rou.name} className="header flex h-[30px] cursor-pointer flex-col items-center">
-                    <a key={rou.name} className="text-[#202733]" href={`#${rou.href}`}>
-                      {t(rou.name)}
-                    </a>
-                    <div className="linefot w-0"></div>
-                  </div>
-                );
-              })}
-            </ul>
-          </div>
-          <div data-aos="fade-right" className="aos-init aos-animate mt-4">
-            <h3 className="text-[20px] font-medium">Aloqa</h3>
-            <ul className="footer-ul">
-              <li className="text-[18px]">
-                <a href="tel:+998974839999">+998974839999</a>
-              </li>
-              <li className="text-[18px]">
-                <a href="tel:+998997126666">+998997126666</a>
-              </li>
-            </ul>
+          <div className="flex gap-12 sm:flex-col md:flex-row">
+            <div data-aos="fade-right" className="aos-init aos-animate sm:mt-1 md:mt-4">
+              <ul className=" flex flex-col items-start">
+                <h3 className="text-[20px] font-medium">Our company</h3>
+                {Router.slice(0, 3).map((rou) => {
+                  return (
+                    <div key={rou.name} className="header flex h-[30px] cursor-pointer flex-col items-center">
+                      <a className="text-[18px] text-[#202733] " href={`#${rou.href}`}>
+                        {t(rou.name)}
+                      </a>
+                      <div className="linefot w-0"></div>
+                    </div>
+                  );
+                })}
+                {Router.slice(3).map((rou) => {
+                  return (
+                    <div key={rou.name} className="header flex h-[30px] cursor-pointer flex-col items-center">
+                      <a key={rou.name} className="text-[18px] text-[#202733]" href={`#${rou.href}`}>
+                        {t(rou.name)}
+                      </a>
+                      <div className="linefot w-0"></div>
+                    </div>
+                  );
+                })}
+              </ul>
+            </div>
+            <div data-aos="fade-right" className="aos-init aos-animate  md:mt-4">
+              <h3 className="text-[20px] font-medium">Aloqa</h3>
+              <ul className="footer-ul">
+                <li className="text-[18px]">
+                  <a href="tel:+998974839999">+998989195929</a>
+                </li>
+                <li className="text-[18px]">
+                  <a href="tel:+998997126666">+998908838685</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
