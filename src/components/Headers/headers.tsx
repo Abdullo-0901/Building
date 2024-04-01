@@ -1,12 +1,17 @@
+import { Button, Drawer } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import 'animate.css';
 import { useTranslation } from 'react-i18next';
 import '../../App.css';
 import logo from '../../assets/logo.png';
-import { Router } from '../router';
 import Language from '../language/language';
+import { Router } from '../router';
+import { CiMenuFries } from 'react-icons/ci';
 
 const Headers = () => {
   const [t] = useTranslation();
+  const [opened, { open, close }] = useDisclosure(false);
+
   return (
     <header className="animate__animated animate__bounce fixed z-40 w-full backdrop-blur-[100px] sm:py-2 md:py-0">
       <nav className="containers">
@@ -24,7 +29,10 @@ const Headers = () => {
               </div>
             );
           })}
-          <img className="h-[80px] sm:w-[55px] md:w-[80px]" src={logo} alt="logo" />
+          <a href="#">
+            {' '}
+            <img className="h-[80px] sm:w-[55px] md:w-[80px]" src={logo} alt="logo" />
+          </a>
           {Router.slice(3).map((rou) => {
             return (
               <div
@@ -38,8 +46,36 @@ const Headers = () => {
               </div>
             );
           })}
-
-          <Language />
+          <div className="flex items-center gap-2">
+            <Language />
+            <Drawer
+              opened={opened}
+              onClose={close}
+              title="Menu"
+              position="right"
+              overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+              size={'xs'}
+            >
+              <ul className="  flex flex-col items-center ">
+                {Router.map((rou) => {
+                  return (
+                    <div
+                      key={rou.name}
+                      className="header h-[30px] cursor-pointer flex-col items-center md:flex"
+                    >
+                      <a key={rou.name} className="text-black" href={`#${rou.href}`} onClick={() => close()}>
+                        {t(rou.name)}
+                      </a>
+                      <div className="line w-0"></div>
+                    </div>
+                  );
+                })}
+              </ul>
+            </Drawer>
+            <Button variant="default" className="sm:inline-block md:hidden" onClick={open}>
+              <CiMenuFries />
+            </Button>
+          </div>
         </ul>
       </nav>
     </header>
