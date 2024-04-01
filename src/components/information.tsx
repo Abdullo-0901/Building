@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-
+import '../App.css';
 export const Information = () => {
   const [t] = useTranslation();
 
@@ -12,7 +12,7 @@ export const Information = () => {
       <div
         data-aos="fade-right"
         data-aos-duration="2000"
-        className="aos-init aos-animate container px-32 py-16 text-white max-md:px-12 max-md:py-8 max-sm:px-4 max-sm:py-4"
+        className=" containers  aos-init aos-animate container px-32 py-16 text-white max-md:px-12 max-md:py-8 max-sm:px-4 max-sm:py-4"
       >
         <h2 className="text-[45px] max-sm:text-[32px]">ATAEV BAHODIR </h2>
         <h2 className="mb-12 text-[45px] max-sm:text-[32px]">{t('hometitle')}</h2>

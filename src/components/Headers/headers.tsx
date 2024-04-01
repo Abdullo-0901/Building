@@ -9,10 +9,13 @@ const Headers = () => {
   return (
     <header className="animate__animated animate__bounce fixed z-40 w-full backdrop-blur-[100px]">
       <nav className="containers">
-        <ul className=" flex items-center justify-around">
+        <ul className=" lex flex items-center justify-around ">
           {Router.slice(0, 3).map((rou) => {
             return (
-              <div key={rou.name} className="header flex h-[30px] cursor-pointer flex-col items-center">
+              <div
+                key={rou.name}
+                className="header h-[30px] cursor-pointer flex-col items-center sm:hidden md:flex"
+              >
                 <a className="text-white " href={`#${rou.href}`}>
                   {t(rou.name)}
                 </a>
@@ -23,7 +26,10 @@ const Headers = () => {
           <img className="w-[100px]" src={logo} alt="qwdqwed" />
           {Router.slice(3).map((rou) => {
             return (
-              <div key={rou.name} className="header flex h-[30px] cursor-pointer flex-col items-center">
+              <div
+                key={rou.name}
+                className="header h-[30px] cursor-pointer flex-col items-center sm:hidden md:flex"
+              >
                 <a key={rou.name} className="text-white" href={`#${rou.href}`}>
                   {t(rou.name)}
                 </a>
