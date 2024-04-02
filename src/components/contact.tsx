@@ -20,7 +20,6 @@ const Contact = () => {
         },
         body: JSON.stringify({
           chat_id: chatId,
-
           text: `Name: ${name}\nPhone Number: ${phoneNumber}\nMessage: ${message}`,
         }),
       });
