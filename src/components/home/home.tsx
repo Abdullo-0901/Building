@@ -1,16 +1,8 @@
-import { useTranslation } from 'react-i18next';
-import '../../App.css';
-import Company from '../company';
-import { Information } from '../information';
-import Partners from '../partners';
-import Services from '../services';
-import Project from '../project';
-import News from '../news';
-import Contact from '../contact';
-import Footer from '../footer';
-import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import '../../App.css';
 
 const Home = () => {
   useEffect(() => {

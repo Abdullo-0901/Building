@@ -1,12 +1,11 @@
-import { Outlet } from 'react-router-dom';
 import Headers from '../components/Headers/headers';
-import Services from '../components/services';
 import Company from '../components/company';
-import Partners from '../components/partners';
-import { Information } from '../components/information';
-import Project from '../components/project';
-import News from '../components/news';
 import Contact from '../components/contact';
+import { Information } from '../components/information';
+import News from '../components/news';
+import Partners from '../components/partners';
+import Project from '../components/project';
+import Services from '../components/services';
 
 const Layout = () => {
   return (
