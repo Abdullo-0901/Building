@@ -1,7 +1,7 @@
-import { Router } from './Router';
+import Layout from './pages/layout';
 
 const App = () => {
-  return <Router />;
+  return <Layout />;
 };
 
 export default App;

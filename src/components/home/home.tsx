@@ -51,17 +51,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <section id="services" className="bg-[#3d5a6a]">
-        <Services />
-      </section>
-      <Company />
-      <Partners />
-      <Information />
-      <Project />
-      <News />
-      <Contact />
-      <Footer />
     </div>
   );
 };
