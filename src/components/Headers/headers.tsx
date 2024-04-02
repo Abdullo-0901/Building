@@ -7,13 +7,34 @@ import logo from '../../assets/logo.png';
 import Language from '../language/language';
 import { Router } from '../router';
 import { CiMenuFries } from 'react-icons/ci';
+import { useEffect, useState } from 'react';
 
 const Headers = () => {
   const [t] = useTranslation();
   const [opened, { open, close }] = useDisclosure(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY < 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="animate__animated animate__bounce fixed z-40 w-full backdrop-blur-[100px] sm:py-2 md:py-0">
+    <header
+      className={`animate__animated animate__bounce fixed z-40 w-full ${
+        !scrolled ? ' backdrop-blur-[100px]' : ''
+      } sm:py-2 md:py-0`}
+    >
       <nav className="containers">
         <ul className="  flex items-center sm:justify-between  md:justify-around ">
           {Router.slice(0, 3).map((rou) => {
@@ -30,8 +51,7 @@ const Headers = () => {
             );
           })}
           <a href="#">
-            {' '}
-            <img className="h-[80px] sm:w-[55px] md:w-[80px]" src={logo} alt="logo" />
+            <img className="sm:h-[55px] sm:w-[55px] md:h-[80px] md:w-[80px]" src={logo} alt="logo" />
           </a>
           {Router.slice(3).map((rou) => {
             return (

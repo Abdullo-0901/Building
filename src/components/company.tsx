@@ -3,12 +3,21 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../App.css';
+import CountUp, { useCountUp } from 'react-countup';
 
 const Company = () => {
   const [t] = useTranslation();
   useEffect(() => {
     AOS.init();
   }, []);
+
+  useCountUp({
+    ref: 'counter',
+    end: 1234567,
+    enableScrollSpy: true,
+    scrollSpyDelay: 3000,
+  });
+
   return (
     <div
       id="company"
@@ -31,13 +40,13 @@ const Company = () => {
           <div className="flex flex-wrap items-center gap-6  sm:flex-col md:flex-row">
             <ul className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center sm:text-center md:text-start">
               <li className="font-semibold max-sm:text-[32px] sm:text-[32px] md:text-[45px] ">
-                <span>120</span>+
+                <CountUp end={120} enableScrollSpy />+
               </li>
               <li className="text-[20px] max-sm:text-[16px]">{t('companytext1')}</li>
             </ul>
             <ul className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center sm:text-center md:text-start">
               <li className="font-semibold max-sm:text-[32px] sm:text-[32px] md:text-[45px]">
-                <span>43</span>+
+                <CountUp end={43} enableScrollSpy />+
               </li>
               <li className="text-[20px] max-sm:text-[16px]">{t('companytext2')}</li>
             </ul>
@@ -45,13 +54,13 @@ const Company = () => {
           <div className="flex flex-wrap items-center gap-6  sm:flex-col md:flex-row">
             <ul className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center sm:text-center md:text-start">
               <li className="font-semibold max-sm:text-[32px] sm:text-[32px] md:text-[45px]">
-                <span>250</span>+
+                <CountUp end={250} enableScrollSpy />+
               </li>
               <li className="text-[20px] max-sm:text-[16px]">{t('companytext3')}</li>
             </ul>
             <ul className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center  sm:text-center md:text-start">
               <li className="font-semibold  max-sm:text-[32px] sm:text-[32px] md:text-[45px]">
-                <span>2</span>+
+                <CountUp end={2} enableScrollSpy />+
               </li>
               <li className="text-[20px] max-sm:text-[16px]">{t('companytext4')}</li>
             </ul>

@@ -79,10 +79,10 @@ const Footer = () => {
               <h3 className="text-[20px] font-medium">Aloqa</h3>
               <ul className="footer-ul">
                 <li className="text-[18px]">
-                  <a href="tel:+998974839999">+998989195929</a>
+                  <a href="tel:+992989195929">+992989195929</a>
                 </li>
                 <li className="text-[18px]">
-                  <a href="tel:+998997126666">+998908838685</a>
+                  <a href="tel:++992989195929">+992908838685</a>
                 </li>
               </ul>
             </div>
