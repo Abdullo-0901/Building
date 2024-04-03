@@ -1,6 +1,7 @@
 import Headers from './components/Headers/headers';
 import Company from './components/company';
 import Contact from './components/contact';
+import Footer from './components/footer';
 import Home from './components/home/home';
 import { Information } from './components/information';
 import News from './components/news';
@@ -20,7 +21,7 @@ const App = () => {
       <Project />
       <News />
       <Contact />
-      <footer />
+      <Footer />
     </div>
   );
 };
