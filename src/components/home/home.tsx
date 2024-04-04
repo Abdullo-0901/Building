@@ -11,10 +11,10 @@ const Home = () => {
   const [t] = useTranslation();
   return (
     <div>
-      <section id="" className='h-screen w-full bg-[url("/city.jpg")] bg-cover bg-no-repeat'>
-        <div className="flex h-screen items-center bg-black bg-opacity-40 object-cover">
-          <div className="containers p-[0_2px]">
-            <h2 className="animate__animated animate__bounceInLeft block pt-[100px] text-[72px] font-medium text-white max-md:text-[45px] max-sm:text-center sm:text-center sm2:text-start">
+      <section id="" className='w-full bg-[url("/city.jpg")] bg-cover bg-no-repeat sm:h-auto mmd:h-screen'>
+        <div className="flex items-center bg-black bg-opacity-40 object-cover sm:h-auto sm:py-14 mmd:h-screen mmd:py-0">
+          <div className="containers flex flex-col justify-center p-[0_2px] sm:items-center mmd:items-start">
+            <h2 className="animate__animated animate__bounceInLeft block pt-[100px] text-[72px] font-medium text-white max-md:text-[45px] sm:text-center  sm2:text-start">
               ATAEV
             </h2>
             <div className="flex gap-5 sm:flex-col sm:items-center sm2:flex-row sm2:items-start">

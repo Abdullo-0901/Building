@@ -61,8 +61,8 @@ const News = () => {
                   <button className="ring-offset-background focus-visible:ring-ring text-primary-foreground scale inline-flex h-8 cursor-pointer items-center justify-center whitespace-nowrap rounded-md rounded-l-full rounded-r-full border-2 bg-red-300 px-10 py-2 text-sm font-medium transition-colors hover:border-gray-500 hover:bg-white hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
                     Yangiliklar
                   </button>
-                  <h3 className="mt-4 text-[14px]">{t(news.title)}</h3>
-                  <p className="py-2 text-[12px]">{t(news.description)}</p>
+                  <h3 className="mt-4 sm:text-[18px]">{t(news.title)}</h3>
+                  <p className="py-2 text-[15px]">{t(news.description)}</p>
                 </div>
               </div>
             );

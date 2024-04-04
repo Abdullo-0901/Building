@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="containers flex flex-wrap justify-around gap-6 py-10 pt-12 max-[600px]:justify-start sm:px-4 md:px-0 ">
           <div data-aos="fade-right" className="aos-init aos-animate">
             <img src="/logo.png" alt="logo" className="h-[100px] w-[100px]" />
-            <p className="py-4">Ijtimoiy tarmoqlarimizga obuna bo'ling</p>
+            <p className="py-4 text-white">Ijtimoiy tarmoqlarimizga obuna bo'ling</p>
             <div className="flex gap-2">
               <a href="https://www.instagram.com/ataev_bahodir_build/" target="_blank">
                 <button className="ring-offset-background focus-visible:ring-ring text-primary-foreground scale button group inline-flex h-10 cursor-pointer items-center justify-center whitespace-nowrap rounded-md rounded-l-full rounded-r-full border-2 bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:border-orange-700 hover:bg-white hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
@@ -52,36 +52,42 @@ const Footer = () => {
           <div className="flex gap-12 sm:flex-col md:flex-row">
             <div data-aos="fade-right" className="aos-init aos-animate sm:mt-1 md:mt-4">
               <ul className=" flex flex-col items-start">
-                <h3 className="text-[20px] font-medium">Our company</h3>
+                <h3 className="text-[20px] font-medium text-white">Our company</h3>
                 {Router.slice(0, 3).map((rou) => {
                   return (
-                    <div key={rou.name} className="header flex h-[30px] cursor-pointer flex-col items-center">
-                      <a className="text-[18px] text-[#202733] " href={`#${rou.href}`}>
+                    <div
+                      key={rou.name}
+                      className="header h-[30px] cursor-pointer flex-col items-center sm:hidden md:flex"
+                    >
+                      <a key={rou.name} className="text-white" href={`#${rou.href}`}>
                         {t(rou.name)}
                       </a>
-                      <div className="linefot w-0"></div>
+                      <div className="line w-0"></div>
                     </div>
                   );
                 })}
                 {Router.slice(3).map((rou) => {
                   return (
-                    <div key={rou.name} className="header flex h-[30px] cursor-pointer flex-col items-center">
-                      <a key={rou.name} className="text-[18px] text-[#202733]" href={`#${rou.href}`}>
+                    <div
+                      key={rou.name}
+                      className="header h-[30px] cursor-pointer flex-col items-center sm:hidden md:flex"
+                    >
+                      <a key={rou.name} className="text-white" href={`#${rou.href}`}>
                         {t(rou.name)}
                       </a>
-                      <div className="linefot w-0"></div>
+                      <div className="line w-0"></div>
                     </div>
                   );
                 })}
               </ul>
             </div>
             <div data-aos="fade-right" className="aos-init aos-animate  md:mt-4">
-              <h3 className="text-[20px] font-medium">Aloqa</h3>
+              <h3 className="text-[20px] font-medium text-white">Aloqa</h3>
               <ul className="footer-ul">
-                <li className="text-[18px]">
+                <li className="text-[18px] text-white">
                   <a href="tel:+992989195929">+992989195929</a>
                 </li>
-                <li className="text-[18px]">
+                <li className="text-[18px] text-white">
                   <a href="tel:++992989195929">+992908838685</a>
                 </li>
               </ul>

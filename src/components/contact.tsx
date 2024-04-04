@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../App.css';
 import { toast } from 'react-toastify';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
   const [message, setMessage] = useState<string>('');
@@ -8,6 +10,10 @@ const Contact = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const sendMessage = async () => {
+    useEffect(() => {
+      Aos.init();
+    }, []);
+
     const token = '7014941655:AAGccnh01y1JkW9E3ggcwSlg5NwoaEKQdL8';
     const chatId = '5923880668'; // The chat ID of the user or group you want to send the message to
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
